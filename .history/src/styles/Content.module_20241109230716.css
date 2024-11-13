@@ -1,0 +1,44 @@
+
+.content {
+    padding: 20px;
+  }
+  
+  .cardContainer {
+    margin-top: 20px;
+  }
+  
+  .card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card li:last-child {
+    border-bottom: none;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  p {
+    color: #555;
+  }
+  

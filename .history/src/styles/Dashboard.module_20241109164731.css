@@ -1,0 +1,19 @@
+/* Dashboard.module.css */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f7fc;
+  }
+  
+  .mainContent {
+    flex: 1;
+    margin-left: 50px; /* Space for Sidebar */
+    padding: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .mainContent {
+      margin-left: 0;
+    }
+  }
+  
