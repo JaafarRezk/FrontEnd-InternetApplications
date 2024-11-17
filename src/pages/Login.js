@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; 
-import useRegister from "../hooks/useRegister";
-import "../styles/Register.css";
+import { Link, useNavigate } from "react-router-dom";
+import useLogin from "../hooks/useLogin";
+import "../styles/Login.css";
 
-const Register = () => {
+const Login = () => {
   const navigate = useNavigate();
-  const { register, loading, message } = useRegister();
-  const [formData, setFormData] = useState({ name: "", email: "", password: "" });
+  const { login, loading, message } = useLogin();
+  const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,24 +14,16 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const success = await register(formData); 
+    const success = await login(formData);
     if (success) {
-      navigate("/login");
+      navigate("/dashboard"); 
     }
   };
 
   return (
-    <div className="register-container">
-      <h1>Register</h1>
+    <div className="login-container">
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
         <input
           type="email"
           name="email"
@@ -49,15 +41,15 @@ const Register = () => {
           required
         />
         <button type="submit" disabled={loading}>
-          {loading ? "Registering..." : "Register"}
+          {loading ? "Logging in..." : "Login"}
         </button>
       </form>
-      {message && <p>{message}</p>} 
+      {message && <p>{message}</p>}
       <p>
-        Already have an account? <Link to="/login">Login here</Link>
+        Don't have an account? <Link to="/register">Register here</Link>
       </p>
     </div>
   );
 };
 
-export default Register;
+export default Login;

@@ -1,16 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../styles/Sidebar.module.css';
+import React from "react";
+import "../styles/Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ menuItems, onMouseEnter, onMouseLeave }) => {
   return (
-    <div className={styles.sidebar}>
+    <aside
+      className="sidebar-container"
+      onMouseEnter={onMouseEnter} 
+      onMouseLeave={onMouseLeave} 
+    >
+      {/* Logo Section */}
+      <div className="logo">
+        <img src="/logo.png" alt="Logo" />
+      </div>
+
+      {/* Navigation Links */}
       <ul>
-        <li><Link to="/dashboard">Dashboard</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/settings">Settings</Link></li>
+        {menuItems.map((item, index) => (
+          <li key={index}>
+            <button className="sidebar-link" onClick={item.onClick}>
+              {item.label}
+            </button>
+          </li>
+        ))}
       </ul>
-    </div>
+
+      {/* Footer Section */}
+      <div className="footer">
+        &copy; {new Date().getFullYear()} Your App
+      </div>
+    </aside>
   );
 };
 

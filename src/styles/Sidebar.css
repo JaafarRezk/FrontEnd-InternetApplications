@@ -1,0 +1,72 @@
+/* Sidebar Styling */
+.sidebar-container {
+    width: 250px; /* عرض الشريط الجانبي */
+    background: linear-gradient(135deg, #534caf, #2E8B57); /* تدرج الألوان */
+    color: #ffffff;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* ظل جانبي ناعم */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* تأثير التحريك */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+    opacity :0;
+    overflow-y: auto;
+}
+
+.sidebar-container:hover {
+    opacity: 1; 
+}
+
+.sidebar-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-link {
+    display: block;
+    color: #ffffff;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #3a3f58; /* اللون الجديد للأزرار */
+}
+
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* تباين خلفية عند المرور */
+    transform: translateX(10px); /* تحريك النص إلى اليمين */
+}
+
+.sidebar-link:active {
+    background-color: rgba(255, 255, 255, 0.4); /* خلفية أوضح عند الضغط */
+}
+
+.sidebar-container .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-container .logo img {
+    width: 120px; /* صورة الشعار */
+    border-radius: 50%; /* حواف دائرية */
+    transition: transform 0.3s ease;
+}
+
+.sidebar-container .logo img:hover {
+    transform: scale(1.1); /* تكبير عند المرور */
+}
+
+.sidebar-container .footer {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.8; /* نص خفيف أسفل القائمة */
+}
+
+.sidebar-container .footer:hover {
+    opacity: 1; /* زيادة وضوح النص عند المرور */
+}
