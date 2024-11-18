@@ -54,6 +54,27 @@ const getMyFiles = async (pageUrl = `${API_BASE_URL}/file/getMyFiles?page=1`) =>
   }
 };
 
+
+// Fetch files with pagination
+const getAllFiles = async (pageUrl = `${API_BASE_URL}/file/getAllFiles?page=1`) => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    throw new Error("No token found, user is not logged in.");
+  }
+
+  try {
+    const response = await axios.get(pageUrl, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+
+  } catch (error) {
+    throw new Error(error.response?.data?.message || "Error fetching files");
+  }
+};
+
 const checkInMultipleFiles = async (fileIds) => {
   const token = localStorage.getItem("token");
   if (!token) {
@@ -107,6 +128,7 @@ const checkoutFile = async (fileId, newFile) => {
   }
 };
 
-const fileService = { getMyFiles, uploadFiles, checkInMultipleFiles,checkoutFile };
+
+const fileService = { getMyFiles, uploadFiles, checkInMultipleFiles,checkoutFile ,getAllFiles};
 
 export default fileService;

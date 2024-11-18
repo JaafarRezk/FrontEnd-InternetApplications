@@ -70,3 +70,17 @@
 .sidebar-container .footer:hover {
     opacity: 1; /* زيادة وضوح النص عند المرور */
 }
+
+.submenu {
+    display: none;
+    padding-left: 20px;
+  }
+  
+  .submenu li {
+    margin: 5px 0;
+  }
+  
+  .sidebar-container li:hover .submenu {
+    display: block;
+  }
+  

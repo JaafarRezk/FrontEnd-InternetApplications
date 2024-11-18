@@ -4,7 +4,7 @@ import '../styles/FileUpload.css';
 
 const API_BASE_URL = 'http://127.0.0.1:8000/api'; 
 
-const FileUploadComponent = () => {
+const FileUpload = () => {
   const { isLoading, uploadedFiles, error, handleFileUpload } = useUploadFiles();
   const fileInputRef = useRef();
 
@@ -60,4 +60,4 @@ const FileUploadComponent = () => {
   );
 };
 
-export default FileUploadComponent;
+export default FileUpload;

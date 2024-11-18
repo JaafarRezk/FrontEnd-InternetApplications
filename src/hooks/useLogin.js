@@ -7,41 +7,50 @@ const useLogin = () => {
   const [user, setUser] = useState(null); 
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    const token = localStorage.getItem("token"); 
-
-    if (storedUser && token) {
-      setUser(JSON.parse(storedUser)); 
-    } else {
+    try {
+      const storedUser = localStorage.getItem("user");
+      const token = localStorage.getItem("token");
+  
+      if (storedUser && token) {
+        setUser(JSON.parse(storedUser)); 
+      } else {
+        setUser(null);
+      }
+    } catch (error) {
+      console.error("Error parsing user data:", error.message);
       setUser(null); 
     }
   }, []);
+  
 
   const login = async (formData) => {
-    setLoading(true); 
+    setLoading(true);
     try {
-      const response = await authService.login(formData); 
+      const response = await authService.login(formData);
       if (response.success) {
-        const userData = response.data.user; 
-        const token = response.data.token; 
-
-        localStorage.setItem("token", token);
-        localStorage.setItem("user", JSON.stringify(userData));
-
-        setUser(userData);
-        setMessage("Login successful!"); 
+        const userData = response.data.user; // كائن المستخدم
+        const token = response.data.token;
+  
+        localStorage.setItem("token", token); // تخزين التوكن
+        localStorage.setItem("user", JSON.stringify(userData)); // تخزين المستخدم كسلسلة نصية
+  
+        setUser(userData); // تحديث حالة المستخدم
+        setMessage("Login successful!");
         return true;
       } else {
         setMessage("Login failed. Please try again.");
         return false;
       }
     } catch (error) {
-      setMessage("Login failed. Please try again."); 
+      const errorMessage =
+        error.response?.data?.message || "Login failed. Please try again.";
+      setMessage(errorMessage);
       return false;
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
+  
 
   const logout = async () => {
     try {

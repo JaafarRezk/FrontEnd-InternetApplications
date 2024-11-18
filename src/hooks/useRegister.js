@@ -1,19 +1,26 @@
-// src/hooks/useRegister.js
 import { useState } from "react";
 import authService from "../services/authService";
 
 const useRegister = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [user, setUser] = useState(null);
 
   const register = async (formData) => {
     setLoading(true);
     setMessage("");
+
     try {
       const response = await authService.register(formData);
 
-      setMessage(response.message || "Registration successful.");
-      return true;
+      if (response.success) {
+        setUser(response.user);
+        setMessage(response.message);
+        return true;
+      } else {
+        setMessage(response.message || "Registration failed. Please try again.");
+        return false;
+      }
     } catch (error) {
       const errorMessage =
         error.response?.data?.message || "Registration failed. Please try again.";
@@ -24,7 +31,7 @@ const useRegister = () => {
     }
   };
 
-  return { register, loading, message };
+  return { register, loading, message, user };
 };
 
 export default useRegister;

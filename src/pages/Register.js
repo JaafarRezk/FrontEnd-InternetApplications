@@ -16,7 +16,7 @@ const Register = () => {
     e.preventDefault();
     const success = await register(formData); 
     if (success) {
-      navigate("/login");
+      navigate("/dashboard");
     }
   };
 

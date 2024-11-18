@@ -4,8 +4,14 @@ const API_BASE_URL = "http://127.0.0.1:8000/api/auth";
 
 const register = async (formData) => {
   const response = await axios.post(`${API_BASE_URL}/register`, formData);
+  if (response.data.success) {
+    const userData = response.data.data.user; 
+    const token = response.data.data.token;  
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", JSON.stringify(userData));
   return response.data;
 };
+}
 
 const login = async (formData) => {
   const response = await axios.post(`${API_BASE_URL}/logIn`, formData);

@@ -21,7 +21,7 @@ const useGetMyFiles = () => {
         setFiles(response.data.data);
         setCurrentPage(response.data.current_page);
         setTotalPages(response.data.last_page); 
-        setNextPageUrl(response.data.next_page_url); 
+        setNextPageUrl(response.data.next_page_url);
         setPrevPageUrl(response.data.prev_page_url);
       } else {
         setError("No files found.");
