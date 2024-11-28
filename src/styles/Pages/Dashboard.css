@@ -1,0 +1,141 @@
+/* ستايل الهيدر */
+header {
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  header p {
+    font-size: 18px;
+  }
+  
+  /* ستايل الشريط الجانبي */
+  aside {
+    background-color: #303f9f;
+    color: #fff;
+    width: 250px;
+    padding-top: 30px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  aside ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  aside li {
+    padding: 10px 20px;
+  }
+  
+  aside li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  aside li a:hover {
+    background-color: #1a237e;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* مكونات محتوى الصفحة */
+  main {
+    margin-left: 260px;
+    padding: 20px;
+  }
+  
+  main h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* ستايل شريط الأدوات */
+  button {
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #1a237e;
+  }
+  
+  /* ستايل المحتوى */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 16px;
+  }
+  
+  /* تصميم استجابة (Responsive) */
+  @media (max-width: 768px) {
+    aside {
+      width: 200px;
+    }
+  
+    main {
+      margin-left: 220px;
+    }
+  
+    .container {
+      flex-direction: column;
+    }
+  
+    .card {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header {
+      padding: 10px;
+    }
+  
+    aside {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+  
+    main {
+      margin-left: 0;
+    }
+  }
+  

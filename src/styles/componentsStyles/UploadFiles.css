@@ -1,0 +1,30 @@
+.upload-file-container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .upload-file-container input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  .upload-file-container button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-file-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .upload-file-container button:disabled {
+    background-color: #ccc;
+  }
+  

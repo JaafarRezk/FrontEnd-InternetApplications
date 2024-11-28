@@ -1,0 +1,36 @@
+.check-out-file-container {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .check-out-file-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .check-out-file-container li {
+    margin: 10px 0;
+  }
+  
+  .check-out-file-container button {
+    padding: 10px 20px;
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .check-out-file-container button:hover {
+    background-color: #e0a800;
+  }
+  
+  .check-out-file-container button:disabled {
+    background-color: #c0c0c0;
+    cursor: not-allowed;
+  }
+  
