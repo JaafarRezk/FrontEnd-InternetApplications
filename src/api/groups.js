@@ -1,5 +1,6 @@
 import apiHelper from '../utils/apiHelper';
 
+
 export const fetchGroups = async () => {
     try {
       const response = await apiHelper.get('/MyGroups');
@@ -45,8 +46,11 @@ export const fetchGroups = async () => {
   
   
   
-  
 
+  
+  
+  
+  
 
 
 export const addUserToGroup = async (groupId, email) => {

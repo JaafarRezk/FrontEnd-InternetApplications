@@ -9,7 +9,6 @@ import ProtectedRoute from './components/ProtectedRoute';
 import FileManagementPage from './pages/FileManagement/FileManagementPage';
 import GroupManagementPage from './pages/GroupManagement/GroupManagementPage';
 
-
 const App = () => {
   return (
     <AuthProvider>
@@ -23,6 +22,7 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <DashboardPage />
+
               </ProtectedRoute>
             }
           />

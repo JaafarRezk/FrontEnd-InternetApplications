@@ -14,6 +14,7 @@ const Content = () => {
                         <Typography variant="h4" component="h2" sx={ { marginBottom: '15px', color: '#333' } }>
                             Welcome to the Dashboard
                         </Typography>
+                        
                         <Typography variant="body1" sx={ { color: '#666' } }>
                             Here you can manage your dashboard content, view statistics, and more! Explore all your options
                             from the sidebar and get the latest updates.

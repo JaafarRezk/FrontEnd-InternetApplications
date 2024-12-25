@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// إنشاء apiHelper مع إعداد Authorization باستخدام Interceptor
 const apiHelper = axios.create({
   baseURL: 'http://127.0.0.1:8000/api',
   headers: {
@@ -7,7 +8,7 @@ const apiHelper = axios.create({
   },
 });
 
-// إضافة Interceptor لتعيين Authorization في كل طلب
+// Interceptor لإضافة Authorization Token لجميع الطلبات
 apiHelper.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
